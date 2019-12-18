@@ -7,5 +7,6 @@
 `npm i`
 ###запуск
 `gulp`
+
 ####или
 ` npm start` 
