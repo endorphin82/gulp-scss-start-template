@@ -4,12 +4,12 @@
 
 установка
 
-`npm i`
+  `npm i`
 
 запуск
 
-`gulp`
+  `gulp`
 
 или
 
-`npm start`
+  `npm start`
