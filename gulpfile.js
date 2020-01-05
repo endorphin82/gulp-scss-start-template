@@ -31,6 +31,20 @@ gulp.task('html', () =>
     .pipe(gulp.dest('build/'))
     .pipe(browserSync.reload({ stream: true }))
 );
+gulp.task('img', () =>
+  gulp
+    .src('src/img/**/*.*')
+    .pipe(gulp.dest('build/img'))
+    .pipe(browserSync.reload({ stream: true }))
+);
+
+gulp.task('fonts', () =>
+  gulp
+    .src('src/fonts/**/*.*')
+    .pipe(gulp.dest('build/fonts'))
+    .pipe(browserSync.reload({ stream: true }))
+);
+
 //add libs scripts
 // gulp.task('js-libs', () =>
 //   gulp
@@ -71,9 +85,11 @@ gulp.task('watch', () => {
   gulp.watch('src/scss/**/*.scss', gulp.parallel('scss'));
   gulp.watch('src/**/*.html', gulp.parallel('html'));
   gulp.watch('src/js/**/*.js', gulp.parallel('js'));
+  gulp.watch('src/img/**/*.*', gulp.parallel('img'));
+  gulp.watch('src/fonts/**/*.*', gulp.parallel('fonts'));
 });
 
 gulp.task(
   'default',
-  gulp.parallel('js', 'scss', 'html', /* 'js-libs',*/ 'browser-sync', 'watch')
+  gulp.parallel('js', 'img', 'scss', 'fonts', 'html', /* 'js-libs',*/ 'browser-sync', 'watch')
 );
